@@ -9,7 +9,7 @@ import (
 )
 
 func parse(formatString string, config Config) string {
-	
+
 	// Get all format tags
 	r, _ := regexp.Compile("{{([\\w\\s]*)}}")
 	retString := formatString
@@ -19,6 +19,8 @@ func parse(formatString string, config Config) string {
 		var fSplit = strings.Split(match[1], " ")
 		var replaceString = ""
 		switch fSplit[0] {
+			case "time":
+				replaceString = timeNow()
 			case "timeSpeech":
 				replaceString = timeSpeech()
 			case "city":
@@ -46,4 +48,9 @@ func timeSpeech() string {
 	} else {
 		return now.Format("3 04 PM")
 	}
+}
+
+func timeNow() string {
+	var now = time.Now()
+	return now.Format("3:04 PM")
 }
