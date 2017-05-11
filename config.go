@@ -6,7 +6,9 @@ import (
 )
 
 type Config struct {
-	WUKey string
+	WUKey string `json:"WUKey"`
+	SpotifyServiceIP string `json:"SpotifyServiceIP"`
+	SpotifyServicePort string `json:"SpotifyServicePort"`
 }
 
 func parseConfig(configPath string) Config {
