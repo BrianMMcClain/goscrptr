@@ -1,13 +1,13 @@
 package main
 
 import (
-	"io/ioutil"
 	"encoding/json"
+	"io/ioutil"
 )
 
 type Config struct {
-	WUKey string `json:"WUKey"`
-	SpotifyServiceIP string `json:"SpotifyServiceIP"`
+	WUKey              string `json:"WUKey"`
+	SpotifyServiceIP   string `json:"SpotifyServiceIP"`
 	SpotifyServicePort string `json:"SpotifyServicePort"`
 }
 

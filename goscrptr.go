@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
 )
 
 var configPath string
@@ -17,11 +17,11 @@ func main() {
 
 	conf := parseConfig(configPath)
 
-	if (len(evalString) > 0) {
+	if len(evalString) > 0 {
 		fmt.Printf("%s\n", parse(evalString, conf))
 	}
 
-	if (startServer) {
+	if startServer {
 		fmt.Println("Starting HTTP API")
 	}
 }
