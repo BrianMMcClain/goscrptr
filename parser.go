@@ -29,6 +29,10 @@ func parse(formatString string, config Config) string {
 			replaceString = strconv.FormatFloat(currentWeatherConditions(fSplit[1], config).TempF, 'f', 1, 64)
 		case "weatherCondition":
 			replaceString = currentWeatherConditions(fSplit[1], config).Weather
+		case "spotifyTrack":
+			replaceString = spotifyStatus(config).Track
+		case "spotifyArtist":
+			replaceString = spotifyStatus(config).Artist
 		default:
 			fmt.Printf("No method for %s\n", fSplit[0])
 		}
